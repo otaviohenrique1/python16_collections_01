@@ -2,6 +2,7 @@ import array as arr
 import numpy as np
 from abc import ABCMeta, abstractmethod
 
+
 class Conta(metaclass=ABCMeta):
     def __init__(self, codigo):
         self._codigo = codigo
@@ -12,7 +13,7 @@ class Conta(metaclass=ABCMeta):
 
     def __str__(self):
         return "[>>Codigo {} Saldo {}<<]".format(self._codigo, self._saldo)
-    
+
     @abstractmethod
     def passa_o_mes(self):
         pass
@@ -32,6 +33,7 @@ class ContaPoupanca(Conta):
 class ContaInvestimento(Conta):
     def passa_o_mes(self):
         self._saldo -= 1
+
 
 conta16 = ContaCorrente(16)
 conta16.deposita(1000)
@@ -56,6 +58,7 @@ arr.array("d", [1.0, 3.5])
 numeros = np.array([1.0, 3.5])
 print(numeros)
 
+
 class ContaSalario:
     def __init__(self, codigo):
         self._codigo = codigo
@@ -72,6 +75,7 @@ class ContaSalario:
 
     def __str__(self):
         return "[>>Codigo {} Saldo {}<<]".format(self._codigo, self._saldo)
+
 
 conta1 = ContaSalario(37)
 print(conta1)
