@@ -9,6 +9,7 @@ class ContaCorrente:
     def __str__(self):
         return "[>>Codigo {} Saldo {}<<]".format(self.codigo, self.saldo)
 
+
 conta1 = ContaCorrente(15)
 conta1.deposita(500)
 print(conta1)
@@ -23,13 +24,15 @@ for conta in contas:
     print(conta)
 
 # Tupla => imutavel
-guilherme = ('Guilherme', 37, 1981)
-daniela = ('Daniela', 31, 1987)
+guilherme = ("Guilherme", 37, 1981)
+daniela = ("Daniela", 31, 1987)
 
-def deposita(conta): # variação "funcional" (separando o comportamento dos dados) 
+
+def deposita(conta):  # variação "funcional" (separando o comportamento dos dados)
     novo_saldo = conta[1] + 100
     codigo = conta[0]
     return (codigo, novo_saldo)
+
 
 conta3 = deposita((18, 1000))
 print(conta3)
